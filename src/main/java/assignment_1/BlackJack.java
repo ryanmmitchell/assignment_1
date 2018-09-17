@@ -9,16 +9,7 @@ public class BlackJack {
 	private Dealer dealer;
 	
 	public static void main(String[] args) {
-		game = new BlackJack();
-	
-	}
-	
-	public void startGame() {
-		deck = new Deck();
-		player = new Player();
-		dealer = new Dealer();
-		
-		System.out.println("Blackjack Game is starting...");
+			
 	}
 	
 	

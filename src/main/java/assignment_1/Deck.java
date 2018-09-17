@@ -30,23 +30,27 @@ public class Deck {
 				deck.get(i).setAce(true);
 			}
 		}
-		
-		
 	}
 	
 	public void shuffleDeck() {
-		// Builds deck
-		int deckSize = 52; 
-		
-		//Shuffles deck
-		for (int i = 0; i < deckSize; i++) {
-			int rand = i + (int)(Math.random() * (deckSize - i));
-			String temp = deck[rand];
-			deck[rand] = deck[i];
-			deck[i] = temp;
-		}
+		// Shuffles the deck
+		Collections.shuffle(deck);
 		
 	}
+	public void dealInitialHand(Player player, Dealer dealer) {
+		// Sets the initial hands of the player and the dealer
+		Cards dealtCard = deck.remove(0);
+		player.hand.add(dealtCard);
+		dealtCard = deck.remove(0);
+		player.hand.add(dealtCard);
+		dealtCard = deck.remove(0);
+		dealer.hand.add(dealtCard);
+		dealtCard = deck.remove(0);
+		dealer.hand.add(dealtCard);
+		
+	}
+	
+	
 	
 	
 }

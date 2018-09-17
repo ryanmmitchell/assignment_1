@@ -26,5 +26,6 @@ public class Cards {
 	public void setAce(boolean n) {
 		this.isAce = n;
 	}
+	
 
 }
