@@ -2,27 +2,41 @@ package assignment_1;
 
 import java.util.*;
 
+
 public class Deck {
 	// Variables for card values 
 	
+	List<Cards> deck;
+	
 	public String[] suit = {
-		"C", "D", "H", "S"	
-	};
+			"C", "D", "H", "S"	
+		};
+		
 	
-	public String[] rank = {
-			"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"
-	};
+	public Deck() {
+		// initializing deck
+		deck = new ArrayList<Cards>();
+		for (int i = 0; i < 52; i++) {
+			for (int j = 0; j < suit.length; j++) {
+				deck.add(new Cards(i, suit[j]));
+			}
+		}
+		//fixing deck values 
+		for (int i = 0; i < 52; i++) {
+			if ((deck.get(i).getValue() >= 11) & (deck.get(i).getValue() < 13)) {
+				deck.get(i).setValue(10);
+			} else if (deck.get(i).getValue() == 13) {
+				deck.get(i).setValue(1);
+				deck.get(i).setAce(true);
+			}
+		}
+		
+		
+	}
 	
-	public String[] initializeDeck(){
+	public void shuffleDeck() {
 		// Builds deck
 		int deckSize = 52; 
-		String[] deck = new String[deckSize];{	
-			for (int i = 0; i < rank.length; i++) {
-				for (int j = 0; j < suit.length; j++) {
-					deck[suit.length*i + j] = rank[i] + suit[j];
-				}
-			}	
-		}
 		
 		//Shuffles deck
 		for (int i = 0; i < deckSize; i++) {
@@ -32,14 +46,7 @@ public class Deck {
 			deck[i] = temp;
 		}
 		
-		return deck;
 	}
-	
-	
-	
-	
-
-	
 	
 	
 }
