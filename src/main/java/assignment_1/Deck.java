@@ -16,7 +16,7 @@ public class Deck {
 	public Deck() {
 		// initializing deck
 		deck = new ArrayList<Cards>();
-		for (int i = 0; i < 52; i++) {
+		for (int i = 0; i < 13; i++) {
 			for (int j = 0; j < suit.length; j++) {
 				deck.add(new Cards(i, suit[j]));
 			}
