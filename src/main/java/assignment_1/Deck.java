@@ -50,7 +50,9 @@ public class Deck {
 		
 	}
 	
-	
+	public int countCards() {
+		return deck.size();
+	}
 	
 	
 }
