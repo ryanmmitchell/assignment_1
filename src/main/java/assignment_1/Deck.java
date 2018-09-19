@@ -23,7 +23,7 @@ public class Deck {
 		deck = new ArrayList<Cards>();
 		for (int i = 0; i < 13; i++) {
 			for (int j = 0; j < suit.length; j++) {
-				deck.add(new Cards(i, suit[j], ranks[i]));
+				deck.add(new Cards(i + 2, suit[j], ranks[i]));
 			}
 		}
 		//fixing deck values 
@@ -32,7 +32,7 @@ public class Deck {
 				deck.get(i).setValue(10);
 			} else if (deck.get(i).getValue() == 13) {
 				deck.get(i).setValue(1);
-			}
+			} 		
 		}
 	}
 	
@@ -51,6 +51,9 @@ public class Deck {
 		dealer.hand.add(dealtCard);
 		dealtCard = deck.remove(0);
 		dealer.hand.add(dealtCard);
+		
+		player.printPlayerHand();
+		dealer.printDealerHand();
 		
 	}
 	

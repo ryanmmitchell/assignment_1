@@ -23,12 +23,15 @@ public class Dealer {
 		return this.handValue;
 	}
 	
-	public String printDealerHand() {
+	public void printDealerHand() {
 		String handstring = "Dealers Hand: "; 
-		
 		handstring = handstring + hand.get(0).toString();
-		return handstring; 
+		System.out.println(handstring);
+		
 	}
 	
+	public Cards getCardx(int x) {
+		return hand.get(x);
+	}
 
 }

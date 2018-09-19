@@ -18,17 +18,21 @@ public class Player {
 		}
 	}
 	
+	public Cards getCardx(int x) {
+		return hand.get(x);
+	}
+	
 	public int getHandValue() {
 		return this.handValue;
 	}
 	
-	public String printPlayerHand() {
+	public void printPlayerHand() {
 		String handstring = "Player Hand: "; 
 		
 		for (int i = 0; i < hand.size(); i++) {
 			handstring = handstring + " " + hand.get(i).toString();
 		}
-		return handstring; 
+		System.out.println(handstring);
 	}
 	
 

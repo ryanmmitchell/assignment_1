@@ -27,5 +27,6 @@ public class Cards {
 	public void setRank(String s) {
 		this.rank = s;
 	}
+	
 
 }

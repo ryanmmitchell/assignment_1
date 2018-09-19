@@ -3,7 +3,6 @@ package assignment_1;
 import java.util.*;
 
 public class BlackJack {
-	private static BlackJack game;
 	private Deck deck;
 	private Player player;
 	private Dealer dealer;
@@ -13,17 +12,25 @@ public class BlackJack {
 		// Reading if file required or not
 		System.out.println("Would you like console input (c) or file input (f)?");
 		String in_or_out = reader.nextLine();
+		reader.close();	
 		
 		// for console input game 
-		if (in_or_out.toLowerCase() == "c") {
+		if (in_or_out.equals("c")) {
+			//Initialize the deck 
+			Deck playDeck = new Deck();
+			playDeck.shuffleDeck();
 			
-		}else if (in_or_out.toLowerCase() == "f") {
+			//Initialize the players
+			Player player = new Player();
+			Dealer dealer = new Dealer();
+			playDeck.dealInitialHand(player, dealer);
 			
-		}else {
+		}else if (in_or_out.equals("f")) {
+			
+		}else{
 			// Invalid input 
 			System.out.println("Invalid input, exiting"); 
 		}
-		
 		
 		
 	}
