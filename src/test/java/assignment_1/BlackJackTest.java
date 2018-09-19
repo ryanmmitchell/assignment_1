@@ -57,6 +57,26 @@ public class BlackJackTest extends TestCase  {
 	
 	@Test
 	public void testAceAsEleven() {
+		Player testPlayer = new Player();
+		
+		testPlayer.dealCardxPlayer(testPlayer, "2", "Hearts");
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Hearts");
+		
+		assertEquals(11, testPlayer.hand.get(1).getValue());
+	}
+	
+	@Test
+	public void testTwoAces() {
+		Player testPlayer = new Player();
+		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Diamonds");
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Hearts");
+		
+		testPlayer.printPlayerHand();
+		
+		assertEquals(11, testPlayer.hand.get(0).getValue());
+		assertEquals(1, testPlayer.hand.get(1).getValue());
+		
 		
 	}
 }

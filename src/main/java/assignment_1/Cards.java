@@ -1,9 +1,9 @@
 package assignment_1;
 
 public class Cards {
-	public int value;
-	public String suit;
-	public String rank;
+	private int value;
+	private String suit;
+	private String rank;
 	
 	public Cards(int value, String suit, String rank) {
 		this.value = value;

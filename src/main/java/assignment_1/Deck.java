@@ -35,7 +35,7 @@ public class Deck {
 			}  else if (deck.get(i).getRank().equals("King")) { // King
 				deck.get(i).setValue(10);
 			}  else if (deck.get(i).getRank().equals("Ace")) { // Ace
-				deck.get(i).setValue(11);
+				deck.get(i).setValue(1);
 			}
 		}
 	}
@@ -46,6 +46,7 @@ public class Deck {
 		
 	}
 	
+	// Deal Player Card (Random)
 	public void dealCardPlayer(Player player) {
 		Cards dealtCard = deck.remove(0);
 		
@@ -61,6 +62,7 @@ public class Deck {
 		player.hand.add(dealtCard);
 	}
 	
+	// Deal Random dealer card 
 	public void dealCardDealer(Dealer dealer) {
 		Cards dealtCard = deck.remove(0);
 		
@@ -74,6 +76,7 @@ public class Deck {
 		}
 		dealer.hand.add(dealtCard);
 	}
+	
 	
 	public void dealInitialHand(Player player, Dealer dealer) {
 		// Sets the initial hands of the player and the dealer
