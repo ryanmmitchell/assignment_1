@@ -75,6 +75,7 @@ public class Deck {
 			}
 		}
 		dealer.hand.add(dealtCard);
+		dealer.setHandValue(dealtCard.getValue());
 	}
 	
 	
@@ -87,9 +88,6 @@ public class Deck {
 		
 		player.printPlayerHand();
 		dealer.printDealerHand();
-		
-		player.setHandValue();
-		dealer.setHandValue();
 		
 	}
 	

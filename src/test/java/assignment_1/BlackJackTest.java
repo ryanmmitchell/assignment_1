@@ -112,6 +112,15 @@ public class BlackJackTest extends TestCase  {
 	
 	@Test
 	public void testDealerHit() {
+		Dealer testDealer = new Dealer();
+		Deck testDeck = new Deck();
+		
+		testDealer.hand.add(testDeck.getCard(0));
+		testDealer.hand.add(testDeck.getCard(2));
+		
+		testDealer.printDealerValue();
+		
+		assertEquals(true, testDealer.dealerHit());
 		
 	}
 	
@@ -122,7 +131,16 @@ public class BlackJackTest extends TestCase  {
 	
 	@Test
 	public void testDealerStay() {
+		Dealer testDealer = new Dealer();
+		Deck testDeck = new Deck();
 		
+		testDealer.hand.add(testDeck.getCard(42));
+		testDealer.hand.add(testDeck.getCard(41));
+		testDealer.setHandValue(testDealer.getCardx(0).getValue());
+		testDealer.setHandValue(testDealer.getCardx(1).getValue());
+		testDealer.printDealerValue();
+		
+		assertEquals(false, testDealer.dealerHit());
 	}
 	
 	@Test
