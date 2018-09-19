@@ -88,6 +88,9 @@ public class Deck {
 		player.printPlayerHand();
 		dealer.printDealerHand();
 		
+		player.setHandValue();
+		dealer.setHandValue();
+		
 	}
 	
 	public int countCards() {

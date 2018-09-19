@@ -62,21 +62,107 @@ public class BlackJackTest extends TestCase  {
 		testPlayer.dealCardxPlayer(testPlayer, "2", "Hearts");
 		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Hearts");
 		
+		testPlayer.printPlayerHand();
+		
 		assertEquals(11, testPlayer.hand.get(1).getValue());
+	}
+	
+	@Test
+	public void testTwoAcesAsOnes() {
+		Player testPlayer = new Player();
+		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Diamonds");
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Hearts");
+		
+		testPlayer.printPlayerHand();
+		
+		assertEquals(1, testPlayer.hand.get(1).getValue());
+		assertEquals(1, testPlayer.hand.get(2).getValue());
+		
 	}
 	
 	@Test
 	public void testTwoAces() {
 		Player testPlayer = new Player();
 		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Spades");
 		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Diamonds");
-		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Hearts");
 		
 		testPlayer.printPlayerHand();
 		
-		assertEquals(11, testPlayer.hand.get(0).getValue());
-		assertEquals(1, testPlayer.hand.get(1).getValue());
+		assertEquals(1, testPlayer.hand.get(0).getValue());
+		assertEquals(11, testPlayer.hand.get(1).getValue());
+	}
+	
+	@Test
+	public void testPlayerHit() {
 		
+	}
+	
+	@Test
+	public void testPlayerMultiHit() {
+		
+	}
+	
+	@Test
+	public void testPlayerStay() {
+		
+	}
+	
+	@Test
+	public void testDealerHit() {
+		
+	}
+	
+	@Test
+	public void testDealerMultiHit() {
+		
+	}
+	
+	@Test
+	public void testDealerStay() {
+		
+	}
+	
+	@Test
+	public void testPlayerBlackJack() {
+		
+	}
+	
+	@Test
+	public void testDealerBlackJack() {
+		
+	}
+	
+	@Test
+	public void testPlayerScore() {
+		
+	}
+	
+	@Test 
+	public void testDealerScore() {
+		
+	}
+	
+	@Test
+	public void testPlayerHand() {
+		
+	}
+
+	@Test
+	public void testDealerHand() {
+		
+	}
+	
+	@Test
+	public void testPlayerBust() {
+		
+	}
+	
+	@Test
+	public void testDealerBust() {
 		
 	}
 }
+

@@ -12,11 +12,19 @@ public class Player {
 	}
 	
 	public void setHandValue() {
-		int value = this.handValue;
 		for (int i = 0; i <this.hand.size(); i++) {
-			value = value + this.hand.get(i).getValue();
-		}
+			if (this.hand.get(i).getRank().equals("Ace")) {
+				if (this.handValue <= 10) {
+					this.hand.get(i).setValue(11);
+				} else if (this.handValue > 10) {
+					this.hand.get(i).setValue(1);
+				}
+			}
+			this.handValue = this.handValue + this.hand.get(i).getValue();
+		} 
 	}
+	
+	
 	
 	public Cards getCardx(int x) {
 		return hand.get(x);
@@ -76,14 +84,10 @@ public class Player {
 			newDealCard = new Cards(10, suit, card);
 			player.hand.add(newDealCard);
 		} else if (card.equals("Ace")) {
-			if (player.handValue <= 10) {
-				newDealCard = new Cards(11, suit, card);
-				player.hand.add(newDealCard);
-			} else {
-				newDealCard = new Cards(1, suit, card);
-				player.hand.add(newDealCard);
-			}
+			newDealCard = new Cards(11, suit, card);
+			player.hand.add(newDealCard);
 		}
+		player.setHandValue();
 		
 	}
 	
