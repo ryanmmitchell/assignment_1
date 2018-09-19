@@ -18,10 +18,8 @@ public class BlackJackTest extends TestCase  {
 	public void testShuffle() {
 		// Deck class is tested
 		Deck tester = new Deck();
-		tester.printDeck(); 
 		//Test 
 		tester.shuffleDeck();
-		tester.printDeck();
 		assertNotNull(tester);	
 	}
 	
