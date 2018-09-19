@@ -52,7 +52,7 @@ public class Deck {
 		
 		// Setting Ace value 
 		if (dealtCard.getRank().equals("Ace")) {
-			if (player.handValue <= 10) {
+			if (player.getHandValue() <= 10) {
 				dealtCard.setValue(11);
 			} else {
 				dealtCard.setValue(1);
@@ -75,7 +75,6 @@ public class Deck {
 			}
 		}
 		dealer.hand.add(dealtCard);
-		dealer.setHandValue(dealtCard.getValue());
 	}
 	
 	
