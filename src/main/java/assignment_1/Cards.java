@@ -28,5 +28,8 @@ public class Cards {
 		this.rank = s;
 	}
 	
+	public String getString() {
+		return this.rank;
+	}
 
 }
