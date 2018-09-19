@@ -10,14 +10,18 @@ public class BlackJackTest extends TestCase  {
 	public void testDeckHasFiftyTwoCards() {
 		Deck tester = new Deck(); // Deck class is tested 
 		//Test 
+		tester.countCards();
 		assertEquals(52, tester.countCards());	
 	}
 
 	@Test
 	public void testShuffle() {
-		Deck tester = new Deck(); // Deck class is tested 
+		// Deck class is tested
+		Deck tester = new Deck();
+		tester.printDeck(); 
 		//Test 
 		tester.shuffleDeck();
+		tester.printDeck();
 		assertNotNull(tester);	
 	}
 	
@@ -44,6 +48,17 @@ public class BlackJackTest extends TestCase  {
 		assertEquals(10, testDeck.getCard(39).getValue());
 		assertEquals(10, testDeck.getCard(43).getValue());
 		assertEquals(10, testDeck.getCard(47).getValue());
+	}
+	
+	@Test 
+	public void testAceAsOne() {
+		Deck testDeck = new Deck(); // Test Deck for generated Ace
+		
+		assertEquals(1, testDeck.getCard(51).getValue());
+	}
+	
+	@Test
+	public void testAceAsEleven() {
 		
 	}
 }

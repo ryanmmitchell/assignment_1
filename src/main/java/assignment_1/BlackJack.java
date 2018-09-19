@@ -3,11 +3,12 @@ package assignment_1;
 import java.util.*;
 
 public class BlackJack {
-	private Deck deck;
-	private Player player;
-	private Dealer dealer;
 	
 	public static void main(String[] args) {
+		Deck playDeck;
+		Player player;
+		Dealer dealer;
+		
 		Scanner reader = new Scanner(System.in);
 		// Reading if file required or not
 		System.out.println("Would you like console input (c) or file input (f)?");
@@ -17,14 +18,13 @@ public class BlackJack {
 		// for console input game 
 		if (in_or_out.equals("c")) {
 			//Initialize the deck 
-			Deck playDeck = new Deck();
-			playDeck.printDeck();
+			playDeck = new Deck();
 			
 			playDeck.shuffleDeck();
 			
 			//Initialize the players
-			Player player = new Player();
-			Dealer dealer = new Dealer();
+			player = new Player();
+			dealer = new Dealer();
 			playDeck.dealInitialHand(player, dealer);
 			
 		}else if (in_or_out.equals("f")) {
