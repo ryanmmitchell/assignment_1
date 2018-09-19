@@ -12,7 +12,7 @@ public class Cards {
 	}
 	
 	public String toString() {
-		return "" + rank + " of " + suit;
+		return "" + rank + " of " + suit + " " + value;
 	}
 	
 	public int getValue() {
@@ -28,7 +28,7 @@ public class Cards {
 		this.rank = s;
 	}
 	
-	public String getString() {
+	public String getRank() {
 		return this.rank;
 	}
 

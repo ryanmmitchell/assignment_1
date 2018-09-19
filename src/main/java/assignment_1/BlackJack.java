@@ -18,6 +18,8 @@ public class BlackJack {
 		if (in_or_out.equals("c")) {
 			//Initialize the deck 
 			Deck playDeck = new Deck();
+			playDeck.printDeck();
+			
 			playDeck.shuffleDeck();
 			
 			//Initialize the players

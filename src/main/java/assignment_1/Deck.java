@@ -28,11 +28,15 @@ public class Deck {
 		}
 		//fixing deck values 
 		for (int i = 0; i < 52; i++) {
-			if ((deck.get(i).getValue() >= 11) & (deck.get(i).getValue() < 13)) {
+			if (deck.get(i).getRank().equals("Jack")) { //Jack 
 				deck.get(i).setValue(10);
-			} else if (deck.get(i).getValue() == 13) {
+			} else if (deck.get(i).getRank().equals("Queen")) { // Queen
+				deck.get(i).setValue(10);
+			}  else if (deck.get(i).getRank().equals("King")) { // King
+				deck.get(i).setValue(10);
+			}  else if (deck.get(i).getRank().equals("Ace")) { // Ace
 				deck.get(i).setValue(1);
-			} 		
+			}
 		}
 	}
 	
@@ -59,6 +63,10 @@ public class Deck {
 	
 	public int countCards() {
 		return deck.size();
+	}
+	
+	public Cards getCard(int n) {
+		return deck.get(n); 
 	}
 	
 	public void printDeck() {

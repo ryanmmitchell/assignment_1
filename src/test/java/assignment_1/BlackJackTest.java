@@ -41,9 +41,9 @@ public class BlackJackTest extends TestCase  {
 		Deck testDeck = new Deck(); // Deck to use 
 		
 		//Testing Q, J, K 
-		assertEquals(10, testDeck.getCard(11).getValue());
-		assertEquals(10, testDeck.getCard(12).getValue());
-		assertEquals(10, testDeck.getCard(13).getValue());
+		assertEquals(10, testDeck.getCard(39).getValue());
+		assertEquals(10, testDeck.getCard(43).getValue());
+		assertEquals(10, testDeck.getCard(47).getValue());
 		
 	}
 }
