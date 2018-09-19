@@ -20,4 +20,6 @@ public class BlackJackTest extends TestCase  {
 		tester.shuffleDeck();
 		assertNotNull(tester);	
 	}
+	
+	
 }

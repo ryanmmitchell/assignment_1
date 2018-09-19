@@ -3,16 +3,16 @@ package assignment_1;
 public class Cards {
 	public int value;
 	public String suit;
-	public boolean isAce;
+	public String rank;
 	
-	public Cards(int value, String suit) {
+	public Cards(int value, String suit, String rank) {
 		this.value = value;
 		this.suit = suit;
-		this.isAce = false; 
+		this.rank = rank;
 	}
 	
 	public String toString() {
-		return "" + suit + value;
+		return "" + rank + " of " + suit;
 	}
 	
 	public int getValue() {
@@ -23,9 +23,9 @@ public class Cards {
 		this.value = n;
 	}
 	
-	public void setAce(boolean n) {
-		this.isAce = n;
+
+	public void setRank(String s) {
+		this.rank = s;
 	}
-	
 
 }

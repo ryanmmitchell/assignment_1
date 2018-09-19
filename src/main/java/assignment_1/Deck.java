@@ -8,8 +8,13 @@ public class Deck {
 	
 	List<Cards> deck;
 	
+	public String[] ranks = {
+		"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", 
+		"King", "Ace"
+	};
+	
 	public String[] suit = {
-			"C", "D", "H", "S"	
+			"Clubs", "Diamonds", "Hearts", "Spades"	
 		};
 		
 	
@@ -18,7 +23,7 @@ public class Deck {
 		deck = new ArrayList<Cards>();
 		for (int i = 0; i < 13; i++) {
 			for (int j = 0; j < suit.length; j++) {
-				deck.add(new Cards(i, suit[j]));
+				deck.add(new Cards(i, suit[j], ranks[i]));
 			}
 		}
 		//fixing deck values 
@@ -27,7 +32,6 @@ public class Deck {
 				deck.get(i).setValue(10);
 			} else if (deck.get(i).getValue() == 13) {
 				deck.get(i).setValue(1);
-				deck.get(i).setAce(true);
 			}
 		}
 	}
@@ -52,6 +56,12 @@ public class Deck {
 	
 	public int countCards() {
 		return deck.size();
+	}
+	
+	public void printDeck() {
+		for(int i =0;i<deck.size(); i++) {
+			System.out.println(deck.get(i));
+		}
 	}
 	
 	
