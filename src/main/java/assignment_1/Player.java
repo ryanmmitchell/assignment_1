@@ -86,7 +86,7 @@ public class Player {
 			newDealCard = new Cards(11, suit, card);
 			player.hand.add(newDealCard);
 		}
-		
+		player.updateHandValue();
 	}
 	
 	public void playerHit(boolean h) {

@@ -93,6 +93,7 @@ public class Dealer {
 			newDealCard = new Cards(11, suit, card);
 			dealer.hand.add(newDealCard);
 		}
+		dealer.updateHandValue();
 	}
 	
 	

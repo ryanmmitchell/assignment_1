@@ -91,8 +91,8 @@ public class BlackJackTest extends TestCase  {
 		
 		testPlayer.printPlayerHand();
 		
-		assertEquals(1, testPlayer.hand.get(0).getValue());
-		assertEquals(11, testPlayer.hand.get(1).getValue());
+		assertEquals(11, testPlayer.hand.get(0).getValue());
+		assertEquals(1, testPlayer.hand.get(1).getValue());
 	}
 	
 	@Test
@@ -132,10 +132,6 @@ public class BlackJackTest extends TestCase  {
 		
 	}
 	
-	@Test
-	public void testDealerMultiHit() {
-		
-	}
 	
 	@Test
 	public void testDealerStay() {
@@ -144,8 +140,7 @@ public class BlackJackTest extends TestCase  {
 		
 		testDealer.hand.add(testDeck.getCard(42));
 		testDealer.hand.add(testDeck.getCard(41));
-		testDealer.setHandValue(testDealer.getCardx(0).getValue());
-		testDealer.setHandValue(testDealer.getCardx(1).getValue());
+		testDealer.updateHandValue();
 		testDealer.printDealerValue();
 		
 		assertEquals(false, testDealer.dealerHit());
@@ -153,41 +148,71 @@ public class BlackJackTest extends TestCase  {
 	
 	@Test
 	public void testPlayerBlackJack() {
+		Player testPlayer = new Player();
 		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxPlayer(testPlayer, "10", "Spades");
+		testPlayer.updateHandValue();
+		
+		assertEquals(21, testPlayer.getHandValue());
 	}
 	
 	@Test
 	public void testDealerBlackJack() {
+		Dealer testPlayer = new Dealer();
 		
+		testPlayer.dealCardxDealer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxDealer(testPlayer, "10", "Spades");
+		testPlayer.updateHandValue();
+		
+		assertEquals(21, testPlayer.getHandValue());
 	}
 	
 	@Test
 	public void testPlayerScore() {
+		Player testPlayer = new Player();
 		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxPlayer(testPlayer, "10", "Spades");
+		testPlayer.updateHandValue();
+		
+		assertEquals(21, testPlayer.getHandValue());
 	}
 	
 	@Test 
 	public void testDealerScore() {
+		Dealer testPlayer = new Dealer();
 		
+		testPlayer.dealCardxDealer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxDealer(testPlayer, "10", "Spades");
+		testPlayer.updateHandValue();
+		
+		assertEquals(21, testPlayer.getHandValue());	
 	}
 	
-	@Test
-	public void testPlayerHand() {
-		
-	}
-
-	@Test
-	public void testDealerHand() {
-		
-	}
 	
 	@Test
 	public void testPlayerBust() {
+		Player testPlayer = new Player();
 		
+		testPlayer.dealCardxPlayer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxPlayer(testPlayer, "10", "Spades");
+		testPlayer.dealCardxPlayer(testPlayer, "10", "Hearts");
+		testPlayer.updateHandValue();
+		
+		assertEquals(31, testPlayer.getHandValue());
 	}
 	
 	@Test
 	public void testDealerBust() {
+		Dealer testPlayer = new Dealer();
+		
+		testPlayer.dealCardxDealer(testPlayer, "Ace", "Spades");
+		testPlayer.dealCardxDealer(testPlayer, "10", "Spades");
+		testPlayer.dealCardxDealer(testPlayer, "10", "Hearts");
+		testPlayer.updateHandValue();
+		
+		assertEquals(31, testPlayer.getHandValue());
 		
 	}
 }
