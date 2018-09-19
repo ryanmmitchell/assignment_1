@@ -60,6 +60,7 @@ public class Deck {
 		}
 		
 		player.hand.add(dealtCard);
+		player.updateHandValue();
 	}
 	
 	// Deal Random dealer card 
@@ -75,6 +76,7 @@ public class Deck {
 			}
 		}
 		dealer.hand.add(dealtCard);
+		dealer.updateHandValue();
 	}
 	
 	
@@ -84,6 +86,9 @@ public class Deck {
 		dealCardPlayer(player);
 		dealCardDealer(dealer);
 		dealCardDealer(dealer);
+		
+		dealer.updateHandValue();
+		player.updateHandValue();
 		
 		player.printPlayerHand();
 		dealer.printDealerHand();

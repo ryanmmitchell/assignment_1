@@ -96,18 +96,26 @@ public class BlackJackTest extends TestCase  {
 	}
 	
 	@Test
-	public void testPlayerHit() {
-		
+	public void testMultiAces() {
+
 	}
 	
 	@Test
-	public void testPlayerMultiHit() {
+	public void testPlayerHit() {
+		Player player = new Player();		
+		player.playerHit(true);
+		assertEquals(true, player.getPlayerHit());
+		player.playerHit(false);
+		assertEquals(false, player.getPlayerHit());
 		
 	}
 	
 	@Test
 	public void testPlayerStay() {
+		Player player = new Player();	
 		
+		player.playerHit(false);
+		assertEquals(false, player.getPlayerHit());
 	}
 	
 	@Test

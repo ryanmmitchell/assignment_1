@@ -12,7 +12,7 @@ public class Cards {
 	}
 	
 	public String toString() {
-		return "" + rank + " of " + suit + " " + value;
+		return "" + rank + " of " + suit + " ";
 	}
 	
 	public int getValue() {

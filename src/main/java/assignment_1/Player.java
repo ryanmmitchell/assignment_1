@@ -4,29 +4,32 @@ import java.util.*;
 
 public class Player {
 	public List<Cards> hand;
-	public int handValue;
+	public int handValue = 0;
 	public boolean hit;
 	
 	public Player() {
 		this.hand = new ArrayList<Cards>();
-		this.handValue = 0;
+		handValue = 0;
+	}
+	
+	public void updateHandValue(){
+		this.handValue = 0; 
+		for (Cards card : hand) {
+			handValue = handValue + card.getValue();
+		}
 	}
 	
 	public void setHandValue(int i) {
 		this.handValue = i;
 	} 
-	
+	public int getHandValue() {
+		return this.handValue;
+	}
 	
 	public Cards getCardx(int x) {
 		return hand.get(x);
 	}
-	
-	public int getHandValue() {
-		for (int i = 0; i < this.hand.size(); i++) {
-			handValue = handValue + this.getCardx(i).getValue();
-		}
-		return handValue;
-	}
+
 	
 	public void printPlayerHand() {
 		String handstring = "Player Hand: "; 

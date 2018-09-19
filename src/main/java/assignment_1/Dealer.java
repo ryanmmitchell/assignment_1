@@ -12,15 +12,19 @@ public class Dealer {
 		this.handValue = 0;
 	}
 	
+	public void updateHandValue(){
+		this.handValue = 0;
+		for (Cards card : hand) {
+			handValue = handValue + card.getValue();
+		}
+	}
+	
 	public void setHandValue(int n) {
 		this.handValue = n;
 	} 
 	
 	public int getHandValue() {
-		for (int i = 0; i < this.hand.size(); i++) {
-			handValue = handValue + this.getCardx(i).getValue();
-		}
-		return handValue;
+		return this.handValue;
 	}
 	
 	public void printDealerHand() {

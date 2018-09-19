@@ -1,5 +1,6 @@
 package assignment_1;
 
+import java.io.*;
 import java.util.*;
 
 public class BlackJack {
@@ -92,15 +93,19 @@ public class BlackJack {
 						break;
 					}
 				}
+				
+				System.out.println("--------------------------------------");
 								
 			}
 			// Final messages: 
 			if (winner.equals("Player")){
 				System.out.println("PLAYER WINS! With: ");
 				player.printPlayerHand();
+				dealer.printDealerHandFinal();
 			} else if (winner.equals("Dealer")) {
 				System.out.println("Dealer wins! With: ");
-				dealer.printDealerHand();
+				dealer.printDealerHandFinal();
+				player.printPlayerHand();
 			} else if (winner.equals("Tie")) {
 				System.out.println("DRAW! With: ");
 				player.printPlayerHand();
@@ -108,7 +113,12 @@ public class BlackJack {
 			}
 			
 			
-		}else if (in_or_out.equals("f")) {
+		}else if (in_or_out.equals("f")) { //File input 
+			System.out.println("Enter File name: ");
+			String file = reader.nextLine();
+			File readFile = new File(file);
+			
+			
 			
 		}else{
 			// Invalid input 
